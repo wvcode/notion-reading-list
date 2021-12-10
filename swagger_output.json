@@ -122,7 +122,16 @@
         ],
         "summary": "This method save an item in your Reading List",
         "description": "",
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "description": "Add an Item",
+            "schema": {
+              "$ref": "#/definitions/Item"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -145,5 +154,28 @@
       }
     }
   },
-  "definitions": {}
+  "definitions": {
+    "Item": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "example": "Testing Title"
+        },
+        "url": {
+          "type": "string",
+          "example": "https://testing.url.com"
+        },
+        "date_saved": {
+          "type": "string",
+          "example": "now"
+        }
+      },
+      "required": [
+        "name",
+        "url",
+        "date_saved"
+      ]
+    }
+  }
 }

@@ -72,6 +72,10 @@ app.post("/save/", verifyStatus, verifyJWT, async (req, res, next) => {
     #swagger.security = [{"api_key": ['read', 'write']}]
     #swagger.tags = ['Reading List']
     #swagger.summary = 'This method save an item in your Reading List'
+    #swagger.parameters['obj'] = { in: 'body', 
+                                   description: 'Add an Item',
+                                   schema: { $ref: '#/definitions/Item' }
+                                  }
   */
   const response = await notion_db.savePage({
     dbId: process.env.DATABASE_ID,

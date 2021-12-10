@@ -38,7 +38,13 @@ const doc = {
       in: "header",
     },
   },
-  definitions: {},
+  definitions: {
+    Item: {
+      $name: "Testing Title",
+      $url: "https://testing.url.com",
+      $date_saved: "now",
+    },
+  },
 };
 
 swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
