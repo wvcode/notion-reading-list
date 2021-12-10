@@ -13,7 +13,10 @@ const doc = {
     title: "Notion Reading List API",
     description: "API to save items to your Notion's Reading List.",
   },
-  host: `${process.env.HOST}:${process.env.PORT}`,
+  host:
+    process.env.PORT != 80
+      ? `${process.env.HOST}:${process.env.PORT}`
+      : `${process.env.HOST}`,
   basePath: "/",
   schemes: ["http", "https"],
   consumes: ["application/json"],
