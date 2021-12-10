@@ -1,0 +1,149 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Notion Reading List API",
+    "description": "API to save items to your Notion's Reading List."
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "Test",
+      "description": "Endpoints to test the API"
+    },
+    {
+      "name": "Reading List",
+      "description": "Endpoints to work with the Reading List"
+    }
+  ],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Test"
+        ],
+        "summary": "This method return the status of the API",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/test/": {
+      "get": {
+        "tags": [
+          "Test"
+        ],
+        "summary": "This method tests if your API Key is valid",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "api_key": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/database/{dbname}": {
+      "get": {
+        "tags": [
+          "Reading List"
+        ],
+        "summary": "This method returns the id for the Reading List database",
+        "description": "",
+        "parameters": [
+          {
+            "name": "dbname",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "api_key": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      }
+    },
+    "/save/": {
+      "post": {
+        "tags": [
+          "Reading List"
+        ],
+        "summary": "This method save an item in your Reading List",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "api_key": [
+              "read",
+              "write"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {}
+}

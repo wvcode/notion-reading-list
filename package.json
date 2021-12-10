@@ -1,0 +1,39 @@
+{
+  "name": "notion-reading-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "jest",
+    "doc": "node swagger.js",
+    "postinstall": "node swagger.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wvcode/notion-reading-list.git"
+  },
+  "keywords": [],
+  "author": "Walter Ritzel <wpcortes@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wvcode/notion-reading-list/issues"
+  },
+  "homepage": "https://github.com/wvcode/notion-reading-list#readme",
+  "dependencies": {
+    "@notionhq/client": "^0.4.9",
+    "cors": "^2.8.5",
+    "dayjs": "^1.10.7",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "swagger-ui-express": "^4.2.0"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "devDependencies": {
+    "jest": "^27.4.3",
+    "supertest": "^6.1.6",
+    "swagger-autogen": "^2.16.0"
+  }
+}
