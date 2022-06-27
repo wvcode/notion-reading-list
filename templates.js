@@ -5,12 +5,14 @@ exports.returnTemplate = ({ dbId, url, date_saved, name }) => {
       parent: { database_id: dbId },
       properties: {
         Type: {
-          type: "select",
-          select: {
-            id: "f96d0d0a-5564-4a20-ab15-5f040d49759e",
-            name: "Article",
-            color: "default",
-          },
+          type: "multi_select",
+          multi_select: [
+            {
+              id: "f96d0d0a-5564-4a20-ab15-5f040d49759e",
+              name: "Article",
+              color: "default",
+            },
+          ],
         },
         Link: {
           type: "url",
